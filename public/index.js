@@ -2,14 +2,14 @@ function toggle(id){
     var selection = document.getElementById(id);
     //console.log(selection.innerHTML);
     var stateElm = selection.children[2];
-    console.log(stateElm);
-    if(checkToggle(stateElm)){
+    //console.log(stateElm);
+    if(stateElm.innerHTML === "yes"){
         stateElm.innerHTML = "no";
     }
     else{
         stateElm.innerHTML = "yes";
     }
-    //checkStates(selection);
+    checkStates(selection);
 }
 function reset(){
     //var child =  document.getElementById("child");
@@ -31,34 +31,55 @@ function reset(){
 
 }
 function checkStates(elm){
-   
-    if(elm.id === "child")
-    {
-      updateGUI(elm,"phone");
-    }else if (elm.id ==="phone"){
-        updateGUI(elm,"checkConnection");
-    }
-    else if(elm.id === "checkConnection"){
-        if(!checkToggle(elm.id)){
-            updateGUI(elm,"alertBlock");
-        }
-        else{
-            updateGUI(elm,"betterBlock");
-            //updateGUI(elm,"checkParent");
-        }
-    }
-    
     console.log(elm.id);
-}
-function updateGUI(elmChecking,elmToChange){
-    var affectedElm = document.getElementById(elmToChange);
-    //console.log(affectedElm.children[2]);
-    if(checkToggle(elmChecking.children[2])){
-        affectedElm.hidden = false;
+  if(elm.id == "child"){
+    if(checkToggle(elm.children[2])){
+        show(['phone']);
     }
     else{
-        affectedElm.hidden = true;
+        hide(['phone']);
     }
+  }
+  else if(elm.id == "phone"){
+    if(checkToggle(elm.children[2])){
+        show(['checkConnection', 'betterBlock']);
+        hide(['callAuthorities']);
+    }
+    else{
+        hide(['checkConnection', 'betterBlock','alertBlock','callAuthorities']);
+    }
+  }
+  else if(elm.id == "checkConnection"){
+    if(!checkToggle(elm.children[2])){
+        show(['betterBlock','allIsWellB']);
+        hide(['alertBlock']);
+    }
+    else{
+        
+        hide(['betterBlock']);
+        show(['alertBlock','alertCheck']);
+    }
+  }
+  else if (elm.id === 'parResponse'){
+    if(checkToggle(elm.children[2])){
+        hide(['callAuthorities']);
+        show(['allIsWellA']);
+    }
+    else{
+        show(['callAuthorities']);
+        hide(['allIsWellA']);
+    }
+  }
+  else if(elm.id === 'alertCheck'){
+    if(checkToggle(elm.children[2])){
+        show(['allIsWellB']);
+        hide(['alertCheckAgain','alertSend','allIsWellC']);
+    }
+    else{
+        show(['alertCheckAgain','allIsWellC']);
+        hide(['allIsWellB']);
+    }
+  }
 }
 function checkToggle(elm){
     if(elm.innerHTML === "yes"){
@@ -69,15 +90,15 @@ function checkToggle(elm){
     }
 
 }
-function turnOn(arg){
+function show(arg){
 arg.forEach(element => {
-    console.log(element);
+    //console.log(element);
     document.getElementById(element).hidden = false;
 });
 }
-function turnOff(){
+function hide(arg){
     arg.forEach(element => {
-        console.log(element);
+        //console.log(element);
         document.getElementById(element).hidden =true;
        
     });

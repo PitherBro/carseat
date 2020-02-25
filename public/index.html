@@ -13,61 +13,78 @@
         <td><button onclick="reset();">Reset</button></td>
     </tr>
 </table>
-    <table>
+    <table border="1">
         <tr id="child">
+            <td><button onclick="toggle('child');">toggle</button></td>
             <td>is a child in the car?</td>
-            <td><button onclick="toggle('child'); turnOn(['phone']);">Toggle</button></td>
+            
             <td>no</td>
 
         </tr>
         <tr id="phone">
+            <td><button onclick="toggle('phone');">toggle</button></td>
             <td>is the phone connected?</td>
-            <td><button onclick="toggle('phone'); turnOn(['checkConnection']);">toggle</button></td>
+            
             <td>no</td>
         </tr>
         <tr id="checkConnection">
-            <td>did the connection break?</td>
-            <td><button onclick="toggle('checkConnection'); turnOn(['betterBlock']);">toggle</button></td>
+            <td><button onclick="toggle('checkConnection');">toggle</button></td>
+            <td>did the connection break unexpectedly?</td>
+          
             <td>no</td>
         </tr>
-        <tr>
-            <table id="alertBlock">
-                <tr id="alertCheck">
-                    <td>did they respond?</td>
-                    <td><button onclick="toggle('alertCheck')">toggle</button></td>
-                    <td>yes</td>
+        <tbody id="betterBlock">
+            <!--
+            <tr>
+                <td style="text-align: center;" colspan="3">Alert the parent on the phone (text, pop up notitification) periodicly</td>           
+            </tr>
+         
+    
+            <tr id="parResponse">
+                <td><button onclick="toggle('parResponse')">toggle</button></td>
+                <td>did they Respond?</td>
+                
+                <td>yes</td>
+                   -->
+                <tr id="allIsWellA">
+                    <td colspan="3">Everything should be good</td>
                 </tr>
-                <tr id="alertCheckAgain">
-                    <td>has it been over 1 min?</td>
-                    <td><button onclick="toggle('alertCheckAgain')">toggle</button></td>
-                    <td>yes</td>
+            </tr>
+            <tr id="callAuthorities">
+                <td style="text-align: center;" colspan="3">!Call nearst EM Responders!</td>
+            </tr>     
+        </tbody>  
+        <tbody id="alertBlock">
+            <tr>
+                <td colspan="3">Ask the Parent if they're still with their child</td>
+            </tr>
+            <tr id="alertCheck">
+                <td><button onclick="toggle('alertCheck')">toggle</button></td>
+                <td>did they respond?</td>
+                
+                <td>yes</td>
+                <tr  id="allIsWellB">
+                    <td colspan="3">Everything should be good</td> 
                 </tr>
-                <tr id="alertSend">
-                    <td>we are alerting the nearst Emergency Response team</td>
+                        
+            </tr>
+            <tr id="alertCheckAgain">
+                <td><button onclick="toggle('alertCheckAgain')">toggle</button></td>
+                <td>has it been over 1 min?</td>
+                
+                <td>no</td>
+                <tr  id="allIsWellC">
+                    <td colspan="3">Everything should be good</td> 
                 </tr>
-            </table>
-        </tr>
-       
-        <tr>
-            <table id="betterBlock">
-                <tr>
-                    <td>alert the parent on the phone(text, pop up notitification)</td>           
-                </tr>
-                <tr id="parResponse">
-                    <td>did they Respond?</td>
-                    <td><button onclick="toggle('parResponse')">toggle</button></td>
-                    <td>yes</td>
-                </tr>
-                <tr id="callAuthorities">
-                    <td>callAuthorities</td>
-                    <td><button onclick="toggle('callAuthorities')">toggle</button></td>
-                    <td>yes</td>
-                </tr>
-            </table>
-        </tr>     
-        
+            </tr>
+            <tr id="alertSend">
+                <td>we are alerting the nearst Emergency Response team</td>
+            </tr>
+        </tbody>
     </table>
-    <!---->
+   
+    
+    <!-- easy way to set things up-->
     <script>
         reset();
     </script>
