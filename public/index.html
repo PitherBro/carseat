@@ -6,7 +6,8 @@
     <script src="index.js"></script>
 </head>
 <body>
-    
+    <p>we show the best use cases first, 
+        <br>then if something went wrong we see what the steps are</p>
 <table>
     <tr>
         <td><button onclick="reset();">Reset</button></td>
@@ -16,39 +17,45 @@
         <tr id="child">
             <td>is a child in the car?</td>
             <td><button onclick="toggle('child');">Toggle</button></td>
-            <td id="state">yes</td>
+            <td>no</td>
 
         </tr>
         <tr id="phone">
             <td>is the phone connected?</td>
             <td><button onclick="toggle('phone')">toggle</button></td>
-            <td>yes</td>
+            <td>no</td>
         </tr>
         <tr id="checkConnection">
             <td>did the connection break?</td>
             <td><button onclick="toggle('checkConnection')">toggle</button></td>
             <td>no</td>
         </tr>
-        <table id="alertBlock">
-         
-            <tr>
-                <td>alert the parent on the phone</td>
-               
-            </tr>
-            <tr id="alertCheck">
-                <td>did they respond?</td>
-                <td><button onclick="toggle('alertCheck')">toggle</button></td>
-                <td>yes</td>
-            </tr>
-            <tr id="alertCheckAgain">
-                <td>has it been over 1 min?</td>
-                <td><button onclick="toggle('alertCheckAgain')">toggle</button></td>
-                <td>yes</td>
-            </tr>
-            <tr id="alertSend">
-                <td>we are alerting the nearst Emergency Response team</td>
-            </tr>
-        </table>       
+        <tr id="alertBlock">
+            <table >
+                <tr id="alertCheck">
+                    <td>did they respond?</td>
+                    <td><button onclick="toggle('alertCheck')">toggle</button></td>
+                    <td>yes</td>
+                </tr>
+                <tr id="alertCheckAgain">
+                    <td>has it been over 1 min?</td>
+                    <td><button onclick="toggle('alertCheckAgain')">toggle</button></td>
+                    <td>yes</td>
+                </tr>
+                <tr id="alertSend">
+                    <td>we are alerting the nearst Emergency Response team</td>
+                </tr>
+            </table>
+        </tr>
+       
+        <tr id="betterBlock">
+            <table >
+                <tr>
+                    <td>alert the parent on the phone</td>           
+                </tr>
+            </table>
+        </tr>     
+        
     </table>
     <!---->
     <script>

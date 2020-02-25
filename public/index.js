@@ -19,7 +19,7 @@ function reset(){
     var alertCheckAgain = document.getElementById("alertCheckAgain");
     var alertSend = document.getElementById("alertSend");
     var alertBlock = document.getElementById("alertBlock");
-
+    var betterBlock = document.getElementById("betterBlock");
     phone.hidden= true;
     checkConnection.hidden = true;
     alert.hidden = true;
@@ -27,21 +27,33 @@ function reset(){
     alertCheckAgain.hidden =true;
     alertSend.hidden = true;
     alertBlock.hidden = true;
+    betterBlock.hidden = true;
 
 }
 function checkStates(elm){
    
     if(elm.id === "child")
     {
-      updateGUI("phone")
+      updateGUI(elm,"phone");
     }else if (elm.id ==="phone"){
-        updateGUI("checkConnection");
+        updateGUI(elm,"checkConnection");
     }
+    else if(elm.id === "checkConnection"){
+        if(!checkToggle(elm.id)){
+            updateGUI(elm,"alertBlock");
+        }
+        else{
+            updateGUI(elm,"betterBlock");
+        }
+       
+    }
+    
+    console.log(elm.id);
 }
-function updateGUI(elmToChange){
+function updateGUI(elmChecking,elmToChange){
     var affectedElm = document.getElementById(elmToChange);
     //console.log(affectedElm.children[2]);
-    if(checkToggle(affectedElm.children[2])){
+    if(checkToggle(elmChecking.children[2])){
         affectedElm.hidden = false;
     }
     else{
