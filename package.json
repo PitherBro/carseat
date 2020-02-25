@@ -1,0 +1,22 @@
+{
+  "name": "carseat",
+  "version": "1.0.0",
+  "description": "detects if you are too far away from your child in a carseat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helderma/carseat.git"
+  },
+  "author": "Aubrey Heldermon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helderma/carseat/issues"
+  },
+  "homepage": "https://github.com/helderma/carseat#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
