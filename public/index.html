@@ -16,22 +16,22 @@
     <table>
         <tr id="child">
             <td>is a child in the car?</td>
-            <td><button onclick="toggle('child');">Toggle</button></td>
+            <td><button onclick="toggle('child'); turnOn(['phone']);">Toggle</button></td>
             <td>no</td>
 
         </tr>
         <tr id="phone">
             <td>is the phone connected?</td>
-            <td><button onclick="toggle('phone')">toggle</button></td>
+            <td><button onclick="toggle('phone'); turnOn(['checkConnection']);">toggle</button></td>
             <td>no</td>
         </tr>
         <tr id="checkConnection">
             <td>did the connection break?</td>
-            <td><button onclick="toggle('checkConnection')">toggle</button></td>
+            <td><button onclick="toggle('checkConnection'); turnOn(['betterBlock']);">toggle</button></td>
             <td>no</td>
         </tr>
-        <tr id="alertBlock">
-            <table >
+        <tr>
+            <table id="alertBlock">
                 <tr id="alertCheck">
                     <td>did they respond?</td>
                     <td><button onclick="toggle('alertCheck')">toggle</button></td>
@@ -48,10 +48,20 @@
             </table>
         </tr>
        
-        <tr id="betterBlock">
-            <table >
+        <tr>
+            <table id="betterBlock">
                 <tr>
-                    <td>alert the parent on the phone</td>           
+                    <td>alert the parent on the phone(text, pop up notitification)</td>           
+                </tr>
+                <tr id="parResponse">
+                    <td>did they Respond?</td>
+                    <td><button onclick="toggle('parResponse')">toggle</button></td>
+                    <td>yes</td>
+                </tr>
+                <tr id="callAuthorities">
+                    <td>callAuthorities</td>
+                    <td><button onclick="toggle('callAuthorities')">toggle</button></td>
+                    <td>yes</td>
                 </tr>
             </table>
         </tr>     

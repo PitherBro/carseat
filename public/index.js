@@ -9,7 +9,7 @@ function toggle(id){
     else{
         stateElm.innerHTML = "yes";
     }
-    checkStates(selection);
+    //checkStates(selection);
 }
 function reset(){
     //var child =  document.getElementById("child");
@@ -44,8 +44,8 @@ function checkStates(elm){
         }
         else{
             updateGUI(elm,"betterBlock");
+            //updateGUI(elm,"checkParent");
         }
-       
     }
     
     console.log(elm.id);
@@ -68,4 +68,17 @@ function checkToggle(elm){
         return false;
     }
 
+}
+function turnOn(arg){
+arg.forEach(element => {
+    console.log(element);
+    document.getElementById(element).hidden = false;
+});
+}
+function turnOff(){
+    arg.forEach(element => {
+        console.log(element);
+        document.getElementById(element).hidden =true;
+       
+    });
 }
