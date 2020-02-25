@@ -32,19 +32,25 @@ function reset(){
 }
 function checkStates(elm){
     console.log(elm.id);
+    //is child in car
   if(elm.id == "child"){
+      //def no, on yes..
     if(checkToggle(elm.children[2])){
         show(['phone']);
     }
+    //on no
     else{
         hide(['phone']);
     }
   }
+  //is phone connected
   else if(elm.id == "phone"){
+      //on yes
     if(checkToggle(elm.children[2])){
         show(['checkConnection', 'betterBlock']);
         hide(['callAuthorities']);
     }
+    //on No
     else{
         hide(['checkConnection', 'betterBlock','alertBlock','callAuthorities']);
     }
@@ -56,10 +62,11 @@ function checkStates(elm){
     }
     else{
         
-        hide(['betterBlock']);
+        hide(['betterBlock','allIsWellB']);
         show(['alertBlock','alertCheck']);
     }
   }
+  /*
   else if (elm.id === 'parResponse'){
     if(checkToggle(elm.children[2])){
         hide(['callAuthorities']);
@@ -67,17 +74,17 @@ function checkStates(elm){
     }
     else{
         show(['callAuthorities']);
-        hide(['allIsWellA']);
+        hide(['allIsWellA', 'allIsWellB']);
     }
-  }
+  }*/
   else if(elm.id === 'alertCheck'){
     if(checkToggle(elm.children[2])){
         show(['allIsWellB']);
-        hide(['alertCheckAgain','alertSend','allIsWellC']);
+        hide(['alertSend']);
     }
     else{
-        show(['alertCheckAgain','allIsWellC']);
-        hide(['allIsWellB']);
+        show(['alertSend']);
+        hide(['allIsWellB','allIsWellC']);
     }
   }
 }
