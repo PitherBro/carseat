@@ -1,23 +1,7 @@
-
-function toggle(id){
-    var selection = document.getElementById(id);
-    //console.log(selection.innerHTML);
-    var stateElm = selection.children[2];
-    console.log(stateElm);
-    if(checkToggle(stateElm)){
-        stateElm.innerHTML = "no";
-    }
-    else{
-        stateElm.innerHTML = "yes";
-    }
-    checkStates(selection);
-}
-function checkToggle(elm){
-    if(elm.innerHTML === "yes"){
-        return true;
-    }
-    else{
-        return false;
-    }
-
-}
+const express = require("express");
+var app = express();
+app.use(express.static("public"));
+//app.get("/",express.static("public"));
+app.listen(5000, ()=>{
+    console.log("now listening on 5000");
+});

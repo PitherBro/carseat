@@ -1,6 +1,3 @@
-
-
-
 function toggle(id){
     var selection = document.getElementById(id);
     //console.log(selection.innerHTML);
