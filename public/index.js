@@ -20,9 +20,15 @@ function reset(){
     var alertSend = document.getElementById("alertSend");
     var alertBlock = document.getElementById("alertBlock");
     var betterBlock = document.getElementById("betterBlock");
+
     phone.hidden= true;
+    //phone.innerHTML = "no";
+
     checkConnection.hidden = true;
-    alert.hidden = true;
+    //checkConnection.innerHTML = "no";
+
+    //checkConnection.innerHTML = "no";
+
     alertCheck.hidden = true;
     alertCheckAgain.hidden =true;
     alertSend.hidden = true;
